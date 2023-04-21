@@ -31,6 +31,8 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Fotter: typeof import('./src/components/Home/content/Fotter.vue')['default']
+    Handler: typeof import('./src/components/Handler/index.vue')['default']
+    HandlerBox: typeof import('./src/components/Handler/content/HandlerBox.vue')['default']
     HeaderNav: typeof import('./src/components/Home/content/HeaderNav.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Home: typeof import('./src/components/Home/index.vue')['default']

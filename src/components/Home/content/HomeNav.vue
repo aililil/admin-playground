@@ -3,7 +3,7 @@ defineProps({
   // is menu collapsed
   isCollapse: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   // menu
   menu: {

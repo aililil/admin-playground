@@ -1,11 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { getOrderDetails } from "@/api/index";
+getOrderDetails({ orderNo: "6790520230419110816756" });
+</script>
 
 <template>
   <home-header />
-  <div class="home">
+  <div class="ns-home">
     <home-nav />
-    <home-main></home-main>
-    <home-footer></home-footer>
+    <section>
+      <home-main></home-main>
+      <home-footer></home-footer>
+    </section>
   </div>
 </template>
 

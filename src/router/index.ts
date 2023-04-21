@@ -11,9 +11,13 @@ export const routes = [
     path: "/home",
     name: "Home",
     component: () => import("@/components/Home/index.vue"),
-    children:[
-
-    ]
+    children: [
+      {
+        path: "/home/handler",
+        name: "Handler",
+        component: () => import("@/components/Handler/index.vue"),
+      },
+    ],
   },
 ];
 

@@ -1,21 +1,25 @@
 import { log } from "console";
 import { reactive } from "vue";
 
-type RefNode = Element | ProxyConstructor;
+type RefNode = Element;
 /**
  * @desc feature like $refs in vue2
  */
-export function useRefs<T extends Record<string, RefNode>>(obj: T) {
-  const refs = reactive({} as T);
+export function useRefs<T extends Record<string, RefNode>>() {
+  const refs = reactive({});
 
-  const setRefs = (name: string) => {
+  const setRefs = (name: keyof T) => {
     return (el: RefNode) => {
-      if (el) obj[name] = el;
+      if (el) (refs as T)[name] = el;
     };
   };
+
   return [refs, setRefs];
 }
 
-function test<T extends Record<string, number>>(obj: T, key: string) {
-  console.log((obj[key] = 123));
+const data = reactive({ 1: 123 });
+
+function test<T extends Record<string, number>>(obj: T, key: keyof T) {
+  obj[key] = 123;
+  console.log(obj[key]);
 }
