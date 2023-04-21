@@ -1,0 +1,34 @@
+// namespace
+$namespace: "ns" !default;
+// separator
+$block-separator: "-" !default;
+$element-separator: "__" !default;
+$modifier-separator: "--" !default;
+
+@mixin b($block) {
+  $B: $namespace + $block-separator + $block;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  $selector: &;
+
+  @at-root {
+    #{$selector + $element-separator + $element} {
+      @content;
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+
+  @at-root {
+    #{$selector + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
